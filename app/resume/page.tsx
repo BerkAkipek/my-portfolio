@@ -4,10 +4,10 @@ export default function ResumePage() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto max-w-4xl px-6 py-12 md:px-16">
+      <main className="mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-10 md:px-16 md:py-12">
         <header>
-          <h1 className="text-4xl font-semibold text-black">Resume</h1>
-          <p className="mt-3 text-lg text-gray-700">
+          <h1 className="text-3xl font-semibold text-black sm:text-4xl">Resume</h1>
+          <p className="mt-3 text-base text-gray-700 sm:text-lg">
             Berk Akipek
           </p>
           <p className="mt-1 text-sm text-gray-600">

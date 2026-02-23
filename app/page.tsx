@@ -5,23 +5,23 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto max-w-6xl px-6 py-12 md:px-10">
+      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10 md:px-10 md:py-12">
         <section id="home">
           <HeroSection />
         </section>
 
-        <section id="projects" className="scroll-mt-24 py-16">
-          <h2 className="text-3xl font-semibold text-[var(--foreground)]">Projects</h2>
-          <p className="mt-4 max-w-2xl text-lg text-[var(--muted)]">
+        <section id="projects" className="scroll-mt-24 py-12 sm:py-14 md:py-16">
+          <h2 className="text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">Projects</h2>
+          <p className="mt-3 max-w-2xl text-base text-[var(--muted)] sm:mt-4 sm:text-lg">
             Selected work across backend systems, automation, and developer-focused tooling.
           </p>
 
-          <div className="mt-8 grid gap-6">
-            <article className="group rounded-2xl border border-[var(--border)] bg-white/80 p-7 shadow-[0_26px_50px_-42px_rgba(19,35,58,0.9)] transition hover:-translate-y-1 hover:shadow-[0_28px_60px_-38px_rgba(29,78,216,0.5)]">
-              <h3 className="text-2xl font-semibold text-[var(--foreground)]">
+          <div className="mt-6 grid gap-5 sm:mt-8 sm:gap-6">
+            <article className="group rounded-2xl border border-[var(--border)] bg-white/80 p-5 shadow-[0_26px_50px_-42px_rgba(19,35,58,0.9)] transition hover:-translate-y-1 hover:shadow-[0_28px_60px_-38px_rgba(29,78,216,0.5)] sm:p-7">
+              <h3 className="text-xl font-semibold text-[var(--foreground)] sm:text-2xl">
                 Stellar Subscription Service
               </h3>
-              <p className="mt-3 max-w-3xl text-[var(--muted)]">
+              <p className="mt-3 max-w-3xl text-sm text-[var(--muted)] sm:text-base">
                 Blockchain-based subscription management system built on the Stellar network.
                 Implements recurring payments, wallet interactions, and backend services for
                 automated billing workflows.
@@ -29,7 +29,9 @@ export default function Home() {
               <p className="mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--primary)]">
                 Tech
               </p>
-              <p className="mt-1 text-[var(--foreground)]">Go, Stellar SDK, backend services, REST APIs</p>
+              <p className="mt-1 text-sm text-[var(--foreground)] sm:text-base">
+                Go, Stellar SDK, backend services, REST APIs
+              </p>
               <a
                 href="https://github.com/BerkAkipek/subscription-stellar"
                 target="_blank"
@@ -40,9 +42,9 @@ export default function Home() {
               </a>
             </article>
 
-            <article className="group rounded-2xl border border-[var(--border)] bg-white/80 p-7 shadow-[0_26px_50px_-42px_rgba(19,35,58,0.9)] transition hover:-translate-y-1 hover:shadow-[0_28px_60px_-38px_rgba(15,118,110,0.45)]">
-              <h3 className="text-2xl font-semibold text-[var(--foreground)]">E-Commerce Shop</h3>
-              <p className="mt-3 max-w-3xl text-[var(--muted)]">
+            <article className="group rounded-2xl border border-[var(--border)] bg-white/80 p-5 shadow-[0_26px_50px_-42px_rgba(19,35,58,0.9)] transition hover:-translate-y-1 hover:shadow-[0_28px_60px_-38px_rgba(15,118,110,0.45)] sm:p-7">
+              <h3 className="text-xl font-semibold text-[var(--foreground)] sm:text-2xl">E-Commerce Shop</h3>
+              <p className="mt-3 max-w-3xl text-sm text-[var(--muted)] sm:text-base">
                 Full-stack e-commerce platform featuring product browsing, cart management, and
                 checkout workflows. Built to explore scalable frontend architecture and backend API
                 design.
@@ -50,7 +52,9 @@ export default function Home() {
               <p className="mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--secondary)]">
                 Tech
               </p>
-              <p className="mt-1 text-[var(--foreground)]">Next.js, React, Tailwind, API routes</p>
+              <p className="mt-1 text-sm text-[var(--foreground)] sm:text-base">
+                Next.js, React, Tailwind, API routes
+              </p>
               <a
                 href="https://github.com/BerkAkipek/portfolio-e-commerce"
                 target="_blank"
@@ -61,11 +65,11 @@ export default function Home() {
               </a>
             </article>
 
-            <article className="group rounded-2xl border border-[var(--border)] bg-white/80 p-7 shadow-[0_26px_50px_-42px_rgba(19,35,58,0.9)] transition hover:-translate-y-1 hover:shadow-[0_28px_60px_-38px_rgba(217,119,6,0.5)]">
-              <h3 className="text-2xl font-semibold text-[var(--foreground)]">
+            <article className="group rounded-2xl border border-[var(--border)] bg-white/80 p-5 shadow-[0_26px_50px_-42px_rgba(19,35,58,0.9)] transition hover:-translate-y-1 hover:shadow-[0_28px_60px_-38px_rgba(217,119,6,0.5)] sm:p-7">
+              <h3 className="text-xl font-semibold text-[var(--foreground)] sm:text-2xl">
                 Cracking Coding Interview Solutions
               </h3>
-              <p className="mt-3 max-w-3xl text-[var(--muted)]">
+              <p className="mt-3 max-w-3xl text-sm text-[var(--muted)] sm:text-base">
                 Collection of algorithm and data-structure solutions implemented in Go, focusing on
                 performance, clarity, and idiomatic language usage. Demonstrates problem-solving
                 ability and backend-friendly thinking.
@@ -73,7 +77,9 @@ export default function Home() {
               <p className="mt-4 text-sm font-semibold uppercase tracking-[0.12em] text-[var(--tertiary)]">
                 Tech
               </p>
-              <p className="mt-1 text-[var(--foreground)]">Go, algorithms, data structures</p>
+              <p className="mt-1 text-sm text-[var(--foreground)] sm:text-base">
+                Go, algorithms, data structures
+              </p>
               <a
                 href="https://github.com/BerkAkipek/cracking-the-coding-interview-solutions-go"
                 target="_blank"
@@ -86,11 +92,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="skills" className="py-16">
-          <h2 className="text-3xl font-semibold text-[var(--foreground)]">Tech Stack</h2>
-          <div className="mt-7 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-[var(--border)] bg-white/75 p-6 shadow-[0_18px_45px_-38px_rgba(19,35,58,0.9)]">
-              <h3 className="text-xl font-semibold text-[var(--primary)]">DevOps &amp; Cloud</h3>
+        <section id="skills" className="py-12 sm:py-14 md:py-16">
+          <h2 className="text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">Tech Stack</h2>
+          <div className="mt-6 grid gap-5 sm:mt-7 sm:gap-6 md:grid-cols-3">
+            <div className="rounded-2xl border border-[var(--border)] bg-white/75 p-5 shadow-[0_18px_45px_-38px_rgba(19,35,58,0.9)] sm:p-6">
+              <h3 className="text-lg font-semibold text-[var(--primary)] sm:text-xl">DevOps &amp; Cloud</h3>
               <ul className="mt-3 space-y-2 text-[var(--muted)]">
                 <li>AWS</li>
                 <li>Docker</li>
@@ -100,8 +106,10 @@ export default function Home() {
                 <li>Linux</li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-[var(--border)] bg-white/75 p-6 shadow-[0_18px_45px_-38px_rgba(19,35,58,0.9)]">
-              <h3 className="text-xl font-semibold text-[var(--secondary)]">Backend &amp; Automation</h3>
+            <div className="rounded-2xl border border-[var(--border)] bg-white/75 p-5 shadow-[0_18px_45px_-38px_rgba(19,35,58,0.9)] sm:p-6">
+              <h3 className="text-lg font-semibold text-[var(--secondary)] sm:text-xl">
+                Backend &amp; Automation
+              </h3>
               <ul className="mt-3 space-y-2 text-[var(--muted)]">
                 <li>Python</li>
                 <li>JavaScript</li>
@@ -110,8 +118,8 @@ export default function Home() {
                 <li>CI/CD pipelines</li>
               </ul>
             </div>
-            <div className="rounded-2xl border border-[var(--border)] bg-white/75 p-6 shadow-[0_18px_45px_-38px_rgba(19,35,58,0.9)]">
-              <h3 className="text-xl font-semibold text-[var(--tertiary)]">Tools &amp; Workflow</h3>
+            <div className="rounded-2xl border border-[var(--border)] bg-white/75 p-5 shadow-[0_18px_45px_-38px_rgba(19,35,58,0.9)] sm:p-6">
+              <h3 className="text-lg font-semibold text-[var(--tertiary)] sm:text-xl">Tools &amp; Workflow</h3>
               <ul className="mt-3 space-y-2 text-[var(--muted)]">
                 <li>Git</li>
                 <li>GitHub</li>
@@ -121,9 +129,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="py-16">
-          <h2 className="text-3xl font-semibold text-[var(--foreground)]">About</h2>
-          <div className="mt-6 max-w-4xl space-y-5 rounded-2xl border border-[var(--border)] bg-white/75 p-7 text-lg text-[var(--muted)] shadow-[0_24px_50px_-40px_rgba(19,35,58,0.8)]">
+        <section id="about" className="py-12 sm:py-14 md:py-16">
+          <h2 className="text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">About</h2>
+          <div className="mt-5 max-w-4xl space-y-5 rounded-2xl border border-[var(--border)] bg-white/75 p-5 text-base text-[var(--muted)] shadow-[0_24px_50px_-40px_rgba(19,35,58,0.8)] sm:mt-6 sm:p-7 sm:text-lg">
             <p>
               I&apos;m a DevOps-oriented software engineer with a background in testing,
               automation, and backend development. I enjoy building systems that are
@@ -145,21 +153,21 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="py-16">
-          <h2 className="text-3xl font-semibold text-[var(--foreground)]">Contact</h2>
-          <div className="mt-6 rounded-2xl border border-[var(--border)] bg-white/75 p-7 shadow-[0_24px_50px_-40px_rgba(19,35,58,0.8)]">
-            <p className="mb-8 max-w-3xl text-lg text-[var(--muted)]">
+        <section id="contact" className="py-12 sm:py-14 md:py-16">
+          <h2 className="text-2xl font-semibold text-[var(--foreground)] sm:text-3xl">Contact</h2>
+          <div className="mt-5 rounded-2xl border border-[var(--border)] bg-white/75 p-5 shadow-[0_24px_50px_-40px_rgba(19,35,58,0.8)] sm:mt-6 sm:p-7">
+            <p className="mb-6 max-w-3xl text-base text-[var(--muted)] sm:mb-8 sm:text-lg">
               I&apos;m currently open to backend, DevOps, and platform engineering
               opportunities. If you&apos;d like to collaborate or discuss a role,
               feel free to reach out.
             </p>
 
-            <div className="flex flex-col gap-4 md:flex-row">
+            <div className="flex flex-col gap-3 sm:gap-4 md:flex-row">
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=berk.akipek.96@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-[var(--border)] bg-white px-6 py-3 text-center font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--primary)] hover:text-[var(--primary)]"
+                className="rounded-lg border border-[var(--border)] bg-white px-6 py-3 text-center text-sm font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--primary)] hover:text-[var(--primary)] sm:text-base md:flex-1"
               >
                 Email Me
               </a>
@@ -168,7 +176,7 @@ export default function Home() {
                 href="https://github.com/BerkAkipek"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-[var(--border)] bg-white px-6 py-3 text-center font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--secondary)] hover:text-[var(--secondary)]"
+                className="rounded-lg border border-[var(--border)] bg-white px-6 py-3 text-center text-sm font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--secondary)] hover:text-[var(--secondary)] sm:text-base md:flex-1"
               >
                 GitHub
               </a>
@@ -177,7 +185,7 @@ export default function Home() {
                 href="https://linkedin.com/in/berk-akipek"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-lg border border-[var(--border)] bg-white px-6 py-3 text-center font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--tertiary)] hover:text-[var(--tertiary)]"
+                className="rounded-lg border border-[var(--border)] bg-white px-6 py-3 text-center text-sm font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--tertiary)] hover:text-[var(--tertiary)] sm:text-base md:flex-1"
               >
                 LinkedIn
               </a>

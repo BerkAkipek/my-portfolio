@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 function GitHubIcon() {
@@ -27,55 +30,132 @@ function LinkedInIcon() {
 }
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: "#projects", label: "Projects" },
+    { href: "#skills", label: "Skills" },
+    { href: "#about", label: "About" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   return (
     <header className="sticky top-0 z-50 border-b border-[var(--border)] bg-white/75 backdrop-blur-xl shadow-[0_12px_40px_-28px_rgba(19,35,58,0.65)]">
-      <nav className="mx-auto flex w-full max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-4 md:px-10">
-        <div className="flex flex-wrap items-center gap-2 md:gap-5">
-          <Link href="#home" className="pr-2 text-base font-semibold tracking-wide text-[var(--foreground)] md:pr-4">
+      <nav className="mx-auto w-full max-w-6xl px-4 py-3 sm:px-6 md:px-10 md:py-4">
+        <div className="flex items-center justify-between gap-3">
+          <Link
+            href="#home"
+            className="text-base font-semibold tracking-wide text-[var(--foreground)]"
+          >
             Berk Akipek
           </Link>
-          <Link href="#projects" className="rounded-full px-3 py-1 text-sm font-medium text-[var(--muted)] transition hover:bg-[var(--surface-soft)] hover:text-[var(--secondary)]">
-            Projects
-          </Link>
-          <Link href="#skills" className="rounded-full px-3 py-1 text-sm font-medium text-[var(--muted)] transition hover:bg-[var(--surface-soft)] hover:text-[var(--secondary)]">
-            Skills
-          </Link>
-          <Link href="#about" className="rounded-full px-3 py-1 text-sm font-medium text-[var(--muted)] transition hover:bg-[var(--surface-soft)] hover:text-[var(--secondary)]">
-            About
-          </Link>
-          <Link href="#contact" className="rounded-full px-3 py-1 text-sm font-medium text-[var(--muted)] transition hover:bg-[var(--surface-soft)] hover:text-[var(--secondary)]">
-            Contact
-          </Link>
+
+          <button
+            type="button"
+            className="rounded-lg border border-[var(--border)] bg-white p-2 text-[var(--foreground)] md:hidden"
+            onClick={() => setMenuOpen((current) => !current)}
+            aria-expanded={menuOpen}
+            aria-label="Toggle navigation menu"
+          >
+            <svg aria-hidden="true" className="h-5 w-5" viewBox="0 0 24 24" fill="none">
+              <path
+                d={menuOpen ? "M6 6L18 18M18 6L6 18" : "M4 7H20M4 12H20M4 17H20"}
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+              />
+            </svg>
+          </button>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3 text-sm">
-          <a
-            href="https://github.com/BerkAkipek"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-1.5 font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--primary)] hover:text-[var(--primary)]"
-          >
-            <GitHubIcon />
-            GitHub
-          </a>
-          <a
-            href="https://www.linkedin.com/in/berk-akipek/"
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-1.5 font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--secondary)] hover:text-[var(--secondary)]"
-          >
-            <LinkedInIcon />
-            LinkedIn
-          </a>
-          <a
-            href="/BerkAkipekResume.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="rounded-full border border-[var(--border)] bg-white px-3 py-1.5 font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--tertiary)] hover:text-[var(--tertiary)]"
-          >
-            Resume
-          </a>
+        <div className="mt-3 hidden items-center justify-between gap-4 md:flex">
+          <div className="flex flex-wrap items-center gap-2">
+            {navLinks.map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="rounded-full px-3 py-1 text-sm font-medium text-[var(--muted)] transition hover:bg-[var(--surface-soft)] hover:text-[var(--secondary)]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center gap-3 text-sm">
+            <a
+              href="https://github.com/BerkAkipek"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-1.5 font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--primary)] hover:text-[var(--primary)]"
+            >
+              <GitHubIcon />
+              GitHub
+            </a>
+            <a
+              href="https://www.linkedin.com/in/berk-akipek/"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--border)] bg-white px-3 py-1.5 font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--secondary)] hover:text-[var(--secondary)]"
+            >
+              <LinkedInIcon />
+              LinkedIn
+            </a>
+            <a
+              href="/BerkAkipekResume.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full border border-[var(--border)] bg-white px-3 py-1.5 font-medium text-[var(--foreground)] transition hover:-translate-y-0.5 hover:border-[color:var(--tertiary)] hover:text-[var(--tertiary)]"
+            >
+              Resume
+            </a>
+          </div>
         </div>
+
+        {menuOpen ? (
+          <div className="mt-3 space-y-3 rounded-2xl border border-[var(--border)] bg-white/95 p-4 shadow-[0_20px_50px_-35px_rgba(19,35,58,0.8)] md:hidden">
+            <div className="grid gap-2">
+              {navLinks.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-[var(--muted)] transition hover:bg-[var(--surface-soft)] hover:text-[var(--secondary)]"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+
+            <div className="grid gap-2 text-sm">
+              <a
+                href="https://github.com/BerkAkipek"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-white px-3 py-2 font-medium text-[var(--foreground)] transition hover:border-[color:var(--primary)] hover:text-[var(--primary)]"
+              >
+                <GitHubIcon />
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/berk-akipek/"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-[var(--border)] bg-white px-3 py-2 font-medium text-[var(--foreground)] transition hover:border-[color:var(--secondary)] hover:text-[var(--secondary)]"
+              >
+                <LinkedInIcon />
+                LinkedIn
+              </a>
+              <a
+                href="/BerkAkipekResume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center justify-center rounded-lg border border-[var(--border)] bg-white px-3 py-2 font-medium text-[var(--foreground)] transition hover:border-[color:var(--tertiary)] hover:text-[var(--tertiary)]"
+              >
+                Resume
+              </a>
+            </div>
+          </div>
+        ) : null}
       </nav>
     </header>
   );
